@@ -1,0 +1,17 @@
+[
+  {
+    "pid": 4101,
+    "cwd": "/demo/orbit",
+    "kind": "interactive",
+    "startedAt": 1795168800000,
+    "sessionId": "s1",
+    "name": "Orbit",
+    "status": "busy"
+  },
+  {"kind":"interactive","pid":4102,"cwd":"/demo/orbit","sessionId":"beacon","name":"Beacon","status":"waiting","waitingFor":"permission prompt"},
+  {"kind":"interactive","pid":4103,"cwd":"/demo/lantern","sessionId":"lantern","name":"Lantern","status":"waiting","waitingFor":"input needed"},
+  {"kind":"background","id":"j1","sessionId":"fern","cwd":"/demo/fern","name":"Fern","pid":4104,"state":"blocked","status":"waiting"},
+  {"kind":"background","id":"j2","sessionId":"cirrus","cwd":"/demo/cirrus","name":"Cirrus","state":"done"},
+  {"kind":"background","id":"j3","cwd":"/demo/pebble","name":"Pebble","state":"failed"},
+  {"kind":"background","id":"j4","cwd":"/demo/wren","name":"Wren","state":"stopped"}
+]

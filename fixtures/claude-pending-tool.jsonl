@@ -1,0 +1,2 @@
+{"type":"user","isSidechain":false,"cwd":"/Users/test/Projects/alpha","sessionId":"s1","timestamp":"2026-11-20T10:00:00.000Z","message":{"role":"user","content":"placeholder prompt"}}
+{"type":"assistant","isSidechain":false,"cwd":"/Users/test/Projects/alpha","sessionId":"s1","timestamp":"2026-11-20T10:00:04.000Z","message":{"role":"assistant","model":"claude-opus-4-5-20251101","stop_reason":"tool_use","content":[{"type":"tool_use","id":"t1","name":"Bash","input":{"command":"placeholder"}}]}}

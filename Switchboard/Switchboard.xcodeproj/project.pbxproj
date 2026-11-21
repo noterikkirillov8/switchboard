@@ -1,0 +1,462 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0BA5FE1259DFF7C1582C46D3 /* claude-agents.json in Resources */ = {isa = PBXBuildFile; fileRef = BA227440F761E3897CE9CCEE /* claude-agents.json */; };
+		0BCDE306FA89FAC91B41CB7C /* Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31FD12158E5F16FA971DBFD /* Views.swift */; };
+		131C1FB8320F8504404D7783 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6104D48965B09DBE476868 /* Model.swift */; };
+		132C16B703422A8BB541E069 /* SessionFocus.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7311A82248292512C9E537 /* SessionFocus.swift */; };
+		15935F6327CF1C19EFC0C112 /* ClaudeAgents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5944AF5D66D544FD4720CD6B /* ClaudeAgents.swift */; };
+		1880F269266DF84357572FEB /* HotKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EF77E4906358FA16FFC838 /* HotKeys.swift */; };
+		5CA2BB1C1C17EC04021DCC35 /* NeedsInbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BFFCC815D099F7F09DF16B /* NeedsInbox.swift */; };
+		6C8A14D8E8123DFA0BDE23D8 /* Hooks.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22DA27106393F06EC03E544 /* Hooks.swift */; };
+		70E501CA6904B5BAC7E85641 /* SwitchboardApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F5FEEE1511677DDDB626FE /* SwitchboardApp.swift */; };
+		724934FF9298E4A334CEFA97 /* Transcript.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D9188536F2244A3E0B7917 /* Transcript.swift */; };
+		7263F70A72DE060AB39666BB /* Sounds in Resources */ = {isa = PBXBuildFile; fileRef = E5D5E2D50F327813025C9269 /* Sounds */; };
+		7AFB080717262AF748CAD047 /* Intro.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C0FEFF7CDFE9F988BAB723 /* Intro.swift */; };
+		7DF8A7381A41A371FDB5BDFA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6EA1FCAC586D0040A91BFEE0 /* Assets.xcassets */; };
+		809C31F7797FF23F4430DC69 /* IntroFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DEEC641D6FAA6C76B23C7F /* IntroFlow.swift */; };
+		813091DB310BAF20849561CA /* FilmDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D374230AE1A50C1A25B7A0 /* FilmDemo.swift */; };
+		8A29221FEDE1A0D5AAF3F709 /* Discovery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F6972F2DCE1F55291671E8 /* Discovery.swift */; };
+		9C7083E12373726EE70BAE91 /* IntroPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8E17721061AA4F1036D71A /* IntroPreview.swift */; };
+		A300305D8C4CE1BBF374CB0C /* Perf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D62B37E3891EC45CA21EDAD /* Perf.swift */; };
+		AD249FD8874B73C2462B85E2 /* NotifyGate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50992FC02D0E859B4B4E1F26 /* NotifyGate.swift */; };
+		C0372EBF5FF01FE955146FBB /* IntroWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8ECFD990A86F15FDCC88838 /* IntroWindow.swift */; };
+		DAD1229C73FB84861A7E0F54 /* Procs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963876493A075BD5D852A0A3 /* Procs.swift */; };
+		DFC11842F59325B5617C9BA0 /* StatusImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65074CDF0CBF91D8533543D0 /* StatusImage.swift */; };
+		EBB47927F01F17F602CF34EB /* QA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795E517B02F0123044779B9F /* QA.swift */; };
+		EED4DE9D1C907841DFE07F35 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A143DCD4243A6333ECE2D5 /* Settings.swift */; };
+		FFB771E7972272C7C22015FF /* Kit.swift in Sources */ = {isa = PBXBuildFile; fileRef = E827CB5C7AAF35C04083E512 /* Kit.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2D62B37E3891EC45CA21EDAD /* Perf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Perf.swift; sourceTree = "<group>"; };
+		4004C53F482006BE156FAA88 /* Switchboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Switchboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		44A143DCD4243A6333ECE2D5 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		48EF77E4906358FA16FFC838 /* HotKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotKeys.swift; sourceTree = "<group>"; };
+		50992FC02D0E859B4B4E1F26 /* NotifyGate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifyGate.swift; sourceTree = "<group>"; };
+		5944AF5D66D544FD4720CD6B /* ClaudeAgents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClaudeAgents.swift; sourceTree = "<group>"; };
+		65074CDF0CBF91D8533543D0 /* StatusImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusImage.swift; sourceTree = "<group>"; };
+		6EA1FCAC586D0040A91BFEE0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		75F5FEEE1511677DDDB626FE /* SwitchboardApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchboardApp.swift; sourceTree = "<group>"; };
+		795E517B02F0123044779B9F /* QA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QA.swift; sourceTree = "<group>"; };
+		7D6104D48965B09DBE476868 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		963876493A075BD5D852A0A3 /* Procs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Procs.swift; sourceTree = "<group>"; };
+		97F6972F2DCE1F55291671E8 /* Discovery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Discovery.swift; sourceTree = "<group>"; };
+		A31FD12158E5F16FA971DBFD /* Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views.swift; sourceTree = "<group>"; };
+		B3D374230AE1A50C1A25B7A0 /* FilmDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmDemo.swift; sourceTree = "<group>"; };
+		BA227440F761E3897CE9CCEE /* claude-agents.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "claude-agents.json"; sourceTree = "<group>"; };
+		BF7311A82248292512C9E537 /* SessionFocus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionFocus.swift; sourceTree = "<group>"; };
+		C0C0FEFF7CDFE9F988BAB723 /* Intro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Intro.swift; sourceTree = "<group>"; };
+		C22DA27106393F06EC03E544 /* Hooks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hooks.swift; sourceTree = "<group>"; };
+		C9D9188536F2244A3E0B7917 /* Transcript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transcript.swift; sourceTree = "<group>"; };
+		E2DEEC641D6FAA6C76B23C7F /* IntroFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroFlow.swift; sourceTree = "<group>"; };
+		E4BFFCC815D099F7F09DF16B /* NeedsInbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeedsInbox.swift; sourceTree = "<group>"; };
+		E5D5E2D50F327813025C9269 /* Sounds */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Sounds; path = Resources/Sounds; sourceTree = SOURCE_ROOT; };
+		E827CB5C7AAF35C04083E512 /* Kit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kit.swift; sourceTree = "<group>"; };
+		E8ECFD990A86F15FDCC88838 /* IntroWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroWindow.swift; sourceTree = "<group>"; };
+		FE8E17721061AA4F1036D71A /* IntroPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroPreview.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		0E61DE38B58507B667CE3C1A /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				CF025AECF2B8C57D220198F2 /* App */,
+				CA0B449273C96061A0783EFB /* Core */,
+				8131123D0243FF02171A566E /* UI */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		13D98789CE37F55CD3DDFAD2 /* fixtures */ = {
+			isa = PBXGroup;
+			children = (
+				BA227440F761E3897CE9CCEE /* claude-agents.json */,
+			);
+			path = fixtures;
+			sourceTree = "<group>";
+		};
+		23DCD0A739AEDD73D2466886 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6EA1FCAC586D0040A91BFEE0 /* Assets.xcassets */,
+				E5D5E2D50F327813025C9269 /* Sounds */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		724FED1B91B9B179307C219E /* switchboard */ = {
+			isa = PBXGroup;
+			children = (
+				13D98789CE37F55CD3DDFAD2 /* fixtures */,
+			);
+			name = switchboard;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		8131123D0243FF02171A566E /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				C0C0FEFF7CDFE9F988BAB723 /* Intro.swift */,
+				E8ECFD990A86F15FDCC88838 /* IntroWindow.swift */,
+				E827CB5C7AAF35C04083E512 /* Kit.swift */,
+				7D6104D48965B09DBE476868 /* Model.swift */,
+				44A143DCD4243A6333ECE2D5 /* Settings.swift */,
+				A31FD12158E5F16FA971DBFD /* Views.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		A2132641A5E56E0EF102F01C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4004C53F482006BE156FAA88 /* Switchboard.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C271F4F2A2C5E3D13EA9CACB = {
+			isa = PBXGroup;
+			children = (
+				23DCD0A739AEDD73D2466886 /* Resources */,
+				0E61DE38B58507B667CE3C1A /* Sources */,
+				724FED1B91B9B179307C219E /* switchboard */,
+				A2132641A5E56E0EF102F01C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CA0B449273C96061A0783EFB /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				5944AF5D66D544FD4720CD6B /* ClaudeAgents.swift */,
+				97F6972F2DCE1F55291671E8 /* Discovery.swift */,
+				C22DA27106393F06EC03E544 /* Hooks.swift */,
+				E2DEEC641D6FAA6C76B23C7F /* IntroFlow.swift */,
+				E4BFFCC815D099F7F09DF16B /* NeedsInbox.swift */,
+				50992FC02D0E859B4B4E1F26 /* NotifyGate.swift */,
+				963876493A075BD5D852A0A3 /* Procs.swift */,
+				BF7311A82248292512C9E537 /* SessionFocus.swift */,
+				C9D9188536F2244A3E0B7917 /* Transcript.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		CF025AECF2B8C57D220198F2 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				B3D374230AE1A50C1A25B7A0 /* FilmDemo.swift */,
+				48EF77E4906358FA16FFC838 /* HotKeys.swift */,
+				FE8E17721061AA4F1036D71A /* IntroPreview.swift */,
+				2D62B37E3891EC45CA21EDAD /* Perf.swift */,
+				795E517B02F0123044779B9F /* QA.swift */,
+				65074CDF0CBF91D8533543D0 /* StatusImage.swift */,
+				75F5FEEE1511677DDDB626FE /* SwitchboardApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		83C9C7CC6B2EA5A2C39F8A7F /* Switchboard */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D3541CC1783A12BFD777048D /* Build configuration list for PBXNativeTarget "Switchboard" */;
+			buildPhases = (
+				F4FDF08320DCB55D20886994 /* Sources */,
+				6FF9F3F733346680C2A3CDDD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Switchboard;
+			packageProductDependencies = (
+			);
+			productName = Switchboard;
+			productReference = 4004C53F482006BE156FAA88 /* Switchboard.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6F95C8DF56C4BC71F76DD868 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					83C9C7CC6B2EA5A2C39F8A7F = {
+						ProvisioningStyle = Manual;
+					};
+				};
+			};
+			buildConfigurationList = 2193B2539C608969FBCED6B6 /* Build configuration list for PBXProject "Switchboard" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = C271F4F2A2C5E3D13EA9CACB;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = A2132641A5E56E0EF102F01C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				83C9C7CC6B2EA5A2C39F8A7F /* Switchboard */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6FF9F3F733346680C2A3CDDD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7DF8A7381A41A371FDB5BDFA /* Assets.xcassets in Resources */,
+				7263F70A72DE060AB39666BB /* Sounds in Resources */,
+				0BA5FE1259DFF7C1582C46D3 /* claude-agents.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F4FDF08320DCB55D20886994 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				15935F6327CF1C19EFC0C112 /* ClaudeAgents.swift in Sources */,
+				8A29221FEDE1A0D5AAF3F709 /* Discovery.swift in Sources */,
+				813091DB310BAF20849561CA /* FilmDemo.swift in Sources */,
+				6C8A14D8E8123DFA0BDE23D8 /* Hooks.swift in Sources */,
+				1880F269266DF84357572FEB /* HotKeys.swift in Sources */,
+				7AFB080717262AF748CAD047 /* Intro.swift in Sources */,
+				809C31F7797FF23F4430DC69 /* IntroFlow.swift in Sources */,
+				9C7083E12373726EE70BAE91 /* IntroPreview.swift in Sources */,
+				C0372EBF5FF01FE955146FBB /* IntroWindow.swift in Sources */,
+				FFB771E7972272C7C22015FF /* Kit.swift in Sources */,
+				131C1FB8320F8504404D7783 /* Model.swift in Sources */,
+				5CA2BB1C1C17EC04021DCC35 /* NeedsInbox.swift in Sources */,
+				AD249FD8874B73C2462B85E2 /* NotifyGate.swift in Sources */,
+				A300305D8C4CE1BBF374CB0C /* Perf.swift in Sources */,
+				DAD1229C73FB84861A7E0F54 /* Procs.swift in Sources */,
+				EBB47927F01F17F602CF34EB /* QA.swift in Sources */,
+				132C16B703422A8BB541E069 /* SessionFocus.swift in Sources */,
+				EED4DE9D1C907841DFE07F35 /* Settings.swift in Sources */,
+				DFC11842F59325B5617C9BA0 /* StatusImage.swift in Sources */,
+				70E501CA6904B5BAC7E85641 /* SwitchboardApp.swift in Sources */,
+				724934FF9298E4A334CEFA97 /* Transcript.swift in Sources */,
+				0BCDE306FA89FAC91B41CB7C /* Views.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		3BC1F0366BE9BBFD061899EE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_RESOURCE_ACCESS_APPLE_EVENTS = YES;
+				ENABLE_SANDBOX = NO;
+				INFOPLIST_FILE = Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.erikkirillov.Switchboard;
+				PRODUCT_NAME = Switchboard;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		6D704E196A1FBAA1BA9335A2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = YES;
+				CODE_SIGNING_REQUIRED = YES;
+				CODE_SIGN_IDENTITY = "Erik Local Signing";
+				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = NO;
+				CODE_SIGN_STYLE = Manual;
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				OTHER_SWIFT_FLAGS = "-strict-concurrency=complete";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				STRIP_INSTALLED_PRODUCT = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+		C6E0E6181320EE5BDCD93941 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_RESOURCE_ACCESS_APPLE_EVENTS = YES;
+				ENABLE_SANDBOX = NO;
+				INFOPLIST_FILE = Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.erikkirillov.Switchboard;
+				PRODUCT_NAME = Switchboard;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		EF3CF970DF9BDCDC2DFF8B9D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_STYLE = Manual;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_SWIFT_FLAGS = "-strict-concurrency=complete";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2193B2539C608969FBCED6B6 /* Build configuration list for PBXProject "Switchboard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF3CF970DF9BDCDC2DFF8B9D /* Debug */,
+				6D704E196A1FBAA1BA9335A2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		D3541CC1783A12BFD777048D /* Build configuration list for PBXNativeTarget "Switchboard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C6E0E6181320EE5BDCD93941 /* Debug */,
+				3BC1F0366BE9BBFD061899EE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6F95C8DF56C4BC71F76DD868 /* Project object */;
+}
