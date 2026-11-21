@@ -87,7 +87,8 @@ actor Engine {
 @Observable
 final class SwitchModel {
     private(set) var lines: [Line] = []
-    private(set) var inbox = NeedsInbox()
+    /// The header and the menu bar both count what is in it.
+    private(set) var inbox = NeedsInbox() { didSet { onSummary(needsYou.count, lines.count) } }
     private(set) var hasData = false
     private(set) var numbers: [String: Int] = [:]      // the jack number stays with a line
     var shown = false
@@ -137,6 +138,10 @@ final class SwitchModel {
     }
 
     var visible: [Line] { prefs.showIdle ? lines : lines.filter { !$0.state.isQuiet } }
+    /// Sessions that need an answer or a look, oldest first. The board lists them on top, and only them.
+    var needsYou: [Line] { inbox.items.map(\.line) }
+    /// Everything else on the board.
+    var rest: [Line] { let ids = Set(inbox.items.map(\.id)); return visible.filter { !ids.contains($0.id) } }
     var waitingCount: Int { lines.filter { $0.state.isWaiting }.count }
     var workingCount: Int { lines.filter { $0.state.isWorking }.count }
     func number(_ l: Line) -> Int { numbers[l.id] ?? 0 }
@@ -209,7 +214,7 @@ final class SwitchModel {
 
     private func apply(_ snapshot: [Line], alerts: Bool) {
         let new = inbox.update(snapshot, now: Date())
-        let before = Dictionary(uniqueKeysWithValues: lines.map { ($0.id, $0.state) })
+        let before = Dictionary(lines.map { ($0.id, $0.state) }, uniquingKeysWith: { first, _ in first })
         var nums = numbers.filter { k, _ in new.contains { $0.id == k } }
         for l in new where nums[l.id] == nil {
             nums[l.id] = (1...).first { n in !nums.values.contains(n) }!
@@ -222,7 +227,7 @@ final class SwitchModel {
         else if new != lines { lines = new }
         _ = shownOld
         hasData = true
-        onSummary(waitingCount, lines.count)
+        onSummary(needsYou.count, lines.count)
         guard alerts, wasData else { return }
         let started = gate.fire(old: before, new: new)
         guard !started.isEmpty, !prefs.quietNow else { return }
@@ -237,7 +242,7 @@ final class SwitchModel {
         demoLines = FilmDemo.lines()
         pushDemo()
         demoTask = Task { [weak self] in
-            for (delay, id, state) in [(4.0, "api-server", LineState.waitingPermission), (3.0, "storefront", .waitingTurn)] {
+            for (delay, id, state) in [(4.0, "api-server", LineState.waitingPermission), (8.0, "storefront", .waitingTurn)] {
                 try? await Task.sleep(for: .seconds(delay))
                 guard let self, !Task.isCancelled else { return }
                 self.setDemo(id, state)

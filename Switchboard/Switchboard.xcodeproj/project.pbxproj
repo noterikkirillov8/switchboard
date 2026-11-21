@@ -31,6 +31,7 @@
 		DFC11842F59325B5617C9BA0 /* StatusImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65074CDF0CBF91D8533543D0 /* StatusImage.swift */; };
 		EBB47927F01F17F602CF34EB /* QA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795E517B02F0123044779B9F /* QA.swift */; };
 		EED4DE9D1C907841DFE07F35 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A143DCD4243A6333ECE2D5 /* Settings.swift */; };
+		FF953FB9C1E20394E306884F /* Plain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853C371CCA3339A2382DB9E2 /* Plain.swift */; };
 		FFB771E7972272C7C22015FF /* Kit.swift in Sources */ = {isa = PBXBuildFile; fileRef = E827CB5C7AAF35C04083E512 /* Kit.swift */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +47,7 @@
 		75F5FEEE1511677DDDB626FE /* SwitchboardApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchboardApp.swift; sourceTree = "<group>"; };
 		795E517B02F0123044779B9F /* QA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QA.swift; sourceTree = "<group>"; };
 		7D6104D48965B09DBE476868 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		853C371CCA3339A2382DB9E2 /* Plain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plain.swift; sourceTree = "<group>"; };
 		963876493A075BD5D852A0A3 /* Procs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Procs.swift; sourceTree = "<group>"; };
 		97F6972F2DCE1F55291671E8 /* Discovery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Discovery.swift; sourceTree = "<group>"; };
 		A31FD12158E5F16FA971DBFD /* Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views.swift; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 				E2DEEC641D6FAA6C76B23C7F /* IntroFlow.swift */,
 				E4BFFCC815D099F7F09DF16B /* NeedsInbox.swift */,
 				50992FC02D0E859B4B4E1F26 /* NotifyGate.swift */,
+				853C371CCA3339A2382DB9E2 /* Plain.swift */,
 				963876493A075BD5D852A0A3 /* Procs.swift */,
 				BF7311A82248292512C9E537 /* SessionFocus.swift */,
 				C9D9188536F2244A3E0B7917 /* Transcript.swift */,
@@ -247,6 +250,7 @@
 				5CA2BB1C1C17EC04021DCC35 /* NeedsInbox.swift in Sources */,
 				AD249FD8874B73C2462B85E2 /* NotifyGate.swift in Sources */,
 				A300305D8C4CE1BBF374CB0C /* Perf.swift in Sources */,
+				FF953FB9C1E20394E306884F /* Plain.swift in Sources */,
 				DAD1229C73FB84861A7E0F54 /* Procs.swift in Sources */,
 				EBB47927F01F17F602CF34EB /* QA.swift in Sources */,
 				132C16B703422A8BB541E069 /* SessionFocus.swift in Sources */,

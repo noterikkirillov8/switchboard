@@ -254,9 +254,12 @@ struct Discovery: Sendable {
         func rank(_ s: LineState) -> Int {
             switch s { case .waitingPermission, .waitingTurn, .blocked: 0; case .exited, .failed, .stopped, .unknown: 1; case .working, .longStep: 2; case .idle, .done: 3 }
         }
-        return lines.sorted { a, b in
+        let sorted = lines.sorted { a, b in
             let (ra, rb) = (rank(a.state), rank(b.state))
             return ra != rb ? ra < rb : (a.since != b.since ? a.since > b.since : a.id < b.id)
         }
+        // two transcripts can name the same session (a fork keeps the old id): one line per id, the first in order wins
+        var seen = Set<String>()
+        return sorted.filter { seen.insert($0.id).inserted }
     }
 }

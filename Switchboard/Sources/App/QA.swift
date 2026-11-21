@@ -29,30 +29,6 @@ enum QA {
         return true
     }
 
-    static func renderNeedsInbox() -> Bool {
-        let args = CommandLine.arguments
-        guard let index = args.firstIndex(of: "-qa"), index + 1 < args.count else { return false }
-        let dir = URL(fileURLWithPath: args[index + 1], isDirectory: true)
-        let now = Date()
-        var inbox = NeedsInbox()
-        let samples: [(String, Tool, LineState, Double)] = [("Fern", .codex, .done, 60), ("Orbit", .claude, .waitingPermission, 720), ("Lantern", .codex, .waitingTurn, 240)]
-        _ = inbox.update(samples.map { name, tool, state, age in
-            Line(id: name, tool: tool, cwd: "/demo/" + name, state: state, since: now.addingTimeInterval(-age), activity: [], pid: nil, observedAt: now)
-        }, now: now)
-        let panel = KitPanel(title: "Switchboard", width: Layout.width, trailing: { EmptyView() }) {
-            NeedsInboxView(items: inbox.items, now: now, open: { _ in })
-        }
-        let renderer = ImageRenderer(content: panel.kitAccent(boardAccent).padding(16).background(Color(hex: 0x3A3B3E)).environment(\.colorScheme, .dark))
-        renderer.scale = 2
-        if let image = renderer.cgImage, let png = NSBitmapImageRep(cgImage: image).representation(using: .png, properties: [:]) {
-            do {
-                try FileManager.default.createDirectory(at: dir, withIntermediateDirectories: true)
-                try png.write(to: dir.appendingPathComponent("19-needs-you.png"))
-            } catch { print("Inbox QA: \(error)") }
-        }
-        return true
-    }
-
     static func renderAutomationHint() -> Bool {
         let args = CommandLine.arguments
         guard let index = args.firstIndex(of: "-qa"), index + 1 < args.count else { return false }
@@ -99,7 +75,7 @@ enum QA {
         _ = renderRepoRows()
 
         func ln(_ id: String, _ tool: Tool, _ project: String, _ model: String?, _ state: LineState, mins: Double, _ act: [Int], pid: Int32? = 1) -> Line {
-            Line(id: id, tool: tool, cwd: "/Users/you/Projects/" + project, model: model, state: state, since: Date().addingTimeInterval(-mins * 60), activity: act, pid: pid)
+            Line(id: id, tool: tool, cwd: "/Users/you/Projects/" + project, model: model, state: state, since: Date().addingTimeInterval(-mins * 60), activity: act, pid: pid, observedAt: Date())
         }
         let busy = [2, 5, 4, 9, 7, 3, 6, 11, 8, 5, 9, 12], calm = [0, 1, 0, 0, 3, 1, 0, 0, 2, 0, 0, 1], none = [Int](repeating: 0, count: 12)
         let lines = Discovery.order([
@@ -142,7 +118,10 @@ enum QA {
         for index in notificationLines.indices { notificationLines[index].fromHook = true }
         scene("16-notification-lamps", lines: notificationLines)
         if args.contains("-notification-lamps-only") { NSApp.terminate(nil); return true }
-        _ = renderNeedsInbox()
+        var fin = ln("f1", .codex, "paper-planes", "gpt-6.2-astra", .waitingTurn, mins: 1, calm); fin.finishedTurn = true
+        scene("19-needs-you", lines: [fin, ln("c1", .claude, "orbit", "Opus 4.5", .waitingPermission, mins: 12, busy), lines[1], lines[3], lines[4]])
+        scene("28-all-working", lines: lines.filter { $0.state == .working })
+        scene("29-hover-waiting", lines: lines, forceHover: "c1")
         scene("01-list")
         scene("15-long-step", lines: [lines[0], ln("x2", .codex, "copper-shop", "gpt-6.2-astra", .longStep, mins: 4, busy)])
         scene("02-hover-keys", forceHover: "c2")

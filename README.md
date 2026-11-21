@@ -9,10 +9,9 @@ See every running Claude Code and Codex CLI session, and which ones are waiting 
 Requires macOS 15 or later.
 
 ## What it does
-- One line per session: a lamp, a jack number, project, repo and branch (with a worktree marker), tool, model and time in state.
-- Amber blinking lamp means waiting for you; steady is working; unlit is idle; red is exited.
-- Waiting lines slide to the top and the menu bar icon shows a count.
-- A "Needs you" list at the top of the board keeps what is waiting, oldest first, until you answer it. It says whether it's your turn or a permission request.
+- One line per session: a lamp, the project and one plain state, such as "Working, 3 min", "Waiting: needs permission" or "Finished". Hover a line for branch, worktree, tool, model, CLI version and recent activity.
+- Amber lamp means waiting for you; grey is working; unlit is idle.
+- A "Needs you" list at the top of the board holds what is waiting, oldest first, until you answer it. The header says "2 waiting" or "All working", and the menu bar icon shows the count.
 - Click a session to jump to its exact tab in Terminal, iTerm, Ghostty or tmux, or to its VS Code or Cursor window. Other apps are just brought to the front. You can also reveal the folder.
 - Optional alerts with a chime and quiet hours.
 

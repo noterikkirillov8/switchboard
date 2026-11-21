@@ -56,6 +56,23 @@ struct CoreTests {
         check(!inbox.items.contains { $0.id == working.id }, "inbox: fresh work clears an unopened item")
     }
 
+    static func plainChecks() {
+        let now = Date()
+        func line(_ state: LineState, mins: Double, finished: Bool = false) -> Line {
+            var l = Line(id: "x", tool: .claude, cwd: "/demo/storefront", model: "Opus 5.5", cliVersion: "2.1.0", git: GitLabel(repo: "storefront", branch: "feat/checkout", worktree: true),
+                         state: state, since: now.addingTimeInterval(-mins * 60), activity: [1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], pid: 1)
+            l.finishedTurn = finished
+            return l
+        }
+        check(Plain.state(line(.working, mins: 3), now: now) == "Working, 3 min" && Plain.state(line(.working, mins: 0.5), now: now) == "Working", "plain: working shows time once past a minute")
+        check(Plain.state(line(.waitingPermission, mins: 9), now: now) == "Waiting: needs permission", "plain: permission wait")
+        check(Plain.state(line(.waitingTurn, mins: 9), now: now) == "Waiting: asked a question" && Plain.state(line(.waitingTurn, mins: 9, finished: true), now: now) == "Finished", "plain: question versus finished")
+        check(Plain.isWaiting(line(.waitingPermission, mins: 1)) && !Plain.isWaiting(line(.waitingTurn, mins: 1, finished: true)) && !Plain.isWaiting(line(.working, mins: 1)), "plain: amber only for a real wait")
+        check(Plain.header(waiting: 2, working: 1, total: 4) == "2 waiting" && Plain.header(waiting: 0, working: 3, total: 3) == "All working"
+              && Plain.header(waiting: 0, working: 1, total: 3) == "1 working" && Plain.header(waiting: 0, working: 0, total: 0) == "No sessions" && Plain.header(waiting: 0, working: 0, total: 2) == "All idle", "plain: header says one thing")
+        check(Plain.details(line(.working, mins: 1), number: 2) == "feat/checkout (worktree) · Claude Code · Opus 5.5 · CLI 2.1.0 · 3 events · No. 02" && Plain.summary(line(.working, mins: 1)) == "feat/checkout (worktree) · Claude Code · Opus 5.5 · CLI 2.1.0", "plain: hover keeps branch, tool, model, CLI, events and number")
+    }
+
     static func main() throws {
         let root = "/demo/fern", common = root + "/.git"
         let main = GitLabel.parse("\(root)\n\(common)\n\(common)\nmain\n")
@@ -365,6 +382,16 @@ struct CoreTests {
         check(try !findsRollout(daysBack: 14, modifiedAge: 30), "discovery: skips rollout outside the fourteen day folders")
         check(try findsRollout(daysBack: 2, modifiedAge: 25 * 3600), "discovery: keeps quiet rollout in the original three day folders")
 
+        plainChecks()
+        var pruneGate = NotifyGate()
+        let wait = Line(id: "g1", tool: .claude, cwd: "/demo/orbit", state: .waitingPermission, since: Date(), activity: [], pid: nil)
+        let t = Date()
+        _ = pruneGate.fire(old: [:], new: [wait], now: t)
+        _ = pruneGate.fire(old: [:], new: [], now: t.addingTimeInterval(400))
+        check(pruneGate.fire(old: [:], new: [wait], now: t.addingTimeInterval(401)).count == 1, "gate: stale entries are pruned and a new wait notifies again")
+        let twin = { (state: LineState, mins: Double) in Line(id: "claude:s9", tool: .claude, cwd: "/demo/orbit", state: state, since: Date().addingTimeInterval(-mins * 60), activity: [], pid: nil) }
+        let ordered = Discovery.order([twin(.idle, 1), twin(.waitingPermission, 5)])
+        check(ordered.count == 1 && ordered[0].state == .waitingPermission, "order: two transcripts with one session id make one line, the waiting one")
         introFlowChecks { check($0, $1) }
         print(failures == 0 ? "all passed" : "\(failures) failed")
         exit(failures == 0 ? 0 : 1)

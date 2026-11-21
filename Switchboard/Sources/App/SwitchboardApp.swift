@@ -6,7 +6,8 @@ import UserNotifications
 /// One borderless panel for the app's whole life; opening it is just `orderFront`.
 final class BoardPanel: NSPanel {
     override var canBecomeKey: Bool { true }
-    override func cancelOperation(_ sender: Any?) { orderOut(nil) }
+    var onCancel: () -> Void = {}
+    override func cancelOperation(_ sender: Any?) { onCancel() }
 }
 
 final class SettingsWindow: NSWindow { override var canBecomeKey: Bool { true } }
@@ -19,7 +20,6 @@ final class SwitchboardApp: NSObject, NSApplicationDelegate, UNUserNotificationC
             NSApp?.setActivationPolicy(.prohibited)
             _ = QA.renderRepoRows(); return
         }
-        if CommandLine.arguments.contains("-inbox-only"), QA.renderNeedsInbox() { return }
         if CommandLine.arguments.contains("-automation-only"), QA.renderAutomationHint() { return }
         let app = NSApplication.shared
         let delegate = SwitchboardApp()
@@ -124,6 +124,7 @@ final class SwitchboardApp: NSObject, NSApplicationDelegate, UNUserNotificationC
         panel.collectionBehavior = [.canJoinAllSpaces, .fullScreenAuxiliary]
         panel.hidesOnDeactivate = false
         panel.isReleasedWhenClosed = false
+        panel.onCancel = { [weak self] in self?.hide() }     // the same close as a click outside: stops the 2 s polling
         host = NSHostingView(rootView: BoardView(model: model, onHeight: { [weak self] h in self?.resize(to: h) }))
         host.sizingOptions = []
         panel.contentView = host

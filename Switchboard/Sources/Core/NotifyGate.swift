@@ -8,6 +8,7 @@ struct NotifyGate: Sendable {
     /// Lines in `new` that are waiting now and were not waiting in `old`, and are allowed to notify.
     mutating func fire(old: [String: LineState], new: [Line], now: Date = Date()) -> [Line] {
         var out: [Line] = []
+        last = last.filter { now.timeIntervalSince($0.value) < Self.interval }    // a line gone for 5 min is forgotten
         for l in new where l.state.isWaiting && !(old[l.id]?.isWaiting ?? false) {
             if let t = last[l.id], now.timeIntervalSince(t) < Self.interval { continue }
             last[l.id] = now
